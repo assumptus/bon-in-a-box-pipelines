@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useContext } from 'react';
+import React, { useRef, useEffect, useContext, useState } from 'react';
 
 export const RenderContext = React.createContext();
 
@@ -9,9 +9,22 @@ export function createContext(activeRenderer, setActiveRenderer) {
     }
 }
 
-export function FoldableOutput(props) {
+export function FoldableOutputWithContext({className, title, componentId, inline, inlineCollapsed, children}) {
     const renderContext = useContext(RenderContext);
-    let active = renderContext.active === props.componentId;
+    let active = renderContext.active === componentId;
+
+    return <FoldableOutputInternal toggle={() => renderContext.toggleVisibility(componentId)} active={active}
+        className={className} title={title} inline={inline} inlineCollapsed={inlineCollapsed} children={children} />
+}
+
+export function FoldableOutput({className, title, inline, inlineCollapsed, children}) {
+    const [active, setActive] = useState(false)
+
+    return <FoldableOutputInternal toggle={() => setActive(prev => !prev)} active={active}
+        className={className} title={title} inline={inline} inlineCollapsed={inlineCollapsed} children={children} />
+}
+
+function FoldableOutputInternal({toggle, active, className, title, inline, inlineCollapsed, children}) {
     const titleRef = useRef(null);
 
     useEffect(() => {
@@ -20,18 +33,17 @@ export function FoldableOutput(props) {
         }
     }, [active]);
 
-    return <div className={props.className}>
+    return <div className={className}>
         <div className="outputTitle">
-            <h3 ref={titleRef} onClick={() => renderContext.toggleVisibility(props.componentId)} className="clickable">
-                {active ? <b>–</b> : <b>+</b>} {props.title}
+            <h3 ref={titleRef} onClick={toggle} className="clickable">
+                {active ? <b>–</b> : <b>+</b>} {title}
             </h3>
-            {props.inline}
-            {!active && props.inlineCollapsed}
+            {inline}
+            {!active && inlineCollapsed}
         </div>
         {active &&
             <div className="outputContent">
-                {props.description && <p className="outputDescription">{props.description}</p>}
-                {props.children}
+                {children}
             </div>}
-    </div>;
+    </div>
 }

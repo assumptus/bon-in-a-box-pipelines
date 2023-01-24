@@ -8,6 +8,7 @@ import ReactFlow, {
   addEdge,
   useNodesState,
   useEdgesState,
+  getConnectedEdges,
   Controls,
   MiniMap,
   Position,
@@ -17,6 +18,7 @@ import IONode from './IONode'
 import ConstantNode, { ARRAY_PLACEHOLDER } from './ConstantNode'
 import { getLayoutedElements } from './react-flow-utils/Layout'
 import { highlightConnectedEdges } from './react-flow-utils/HighlightConnectedEdges'
+import { getUpstreamNodes, getDownstreamNodes } from './react-flow-utils/getConnectedNodes'
 import { getScriptDescription } from './ScriptDescriptionStore'
 
 const nodeTypes = {
@@ -68,7 +70,7 @@ export function PipelineEditor(props) {
       setEdges((edgesList) => highlightConnectedEdges(selectedNodes, addEdge(pendingEdgeParams, edgesList)))
       addEdgeWithHighlight(null)
     }
-  }, [pendingEdgeParams, selectedNodes])
+  }, [pendingEdgeParams, selectedNodes, setEdges])
 
   const inputFile = useRef(null) 
 
@@ -76,14 +78,14 @@ export function PipelineEditor(props) {
     setEdges((edgesList) =>  
       highlightConnectedEdges(selectedNodes, addEdge(params, edgesList))
     )
-  }, [selectedNodes]);
+  }, [selectedNodes, setEdges]);
 
   const onDragOver = useCallback((event) => {
     event.preventDefault();
     event.dataTransfer.dropEffect = 'move';
   }, []);
 
-  const onConstantValueChange = (event) => {
+  const onConstantValueChange = useCallback((event) => {
     setNodes((nds) =>
       nds.map((node) => {
         if(node.id !== event.target.id) {
@@ -110,7 +112,7 @@ export function PipelineEditor(props) {
         };
       })
     );
-  };
+  }, [setNodes]);
 
   const onSelectionChange = useCallback((selected) => {
     setSelectedNodes(selected.nodes)
@@ -153,7 +155,55 @@ export function PipelineEditor(props) {
       targetHandle: targetHandle
     }
     addEdgeWithHighlight(newEdge)
-  }, [reactFlowInstance])
+  }, [reactFlowInstance, onConstantValueChange, setNodes])
+
+  const injectOutput = useCallback((event, source, sourceHandle) => {
+    event.preventDefault()
+
+    const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect()
+
+    // Offset from pointer event to canvas
+    const position = reactFlowInstance.project({
+      x: event.clientX - reactFlowBounds.left,
+      y: event.clientY - reactFlowBounds.top,
+    })
+
+    // Approx offset so the node appears near the input.
+    position.x = position.x + 100
+    position.y = position.y - 15
+
+    const newNode = {
+      id: getId(),
+      type: 'output',
+      position,
+      targetPosition: Position.Left,
+      data: { label: 'Output' }
+    };
+    setNodes((nds) => nds.concat(newNode))
+
+    const newEdge = {
+      source: source,
+      sourceHandle: sourceHandle,
+      target: newNode.id,
+      targetHandle: null
+    }
+    addEdgeWithHighlight(newEdge)
+  }, [reactFlowInstance, setNodes])
+
+  const onNodesDelete = useCallback((deletedNodes) => {
+    // We delete constants that are connected to no other node
+    const upstreamNodes = getUpstreamNodes(deletedNodes, reactFlowInstance)
+    const allEdges = reactFlowInstance.getEdges()
+    let toDelete = upstreamNodes.filter(n => n.type === 'constant' && getConnectedEdges([n], allEdges).length === 1)
+    
+    // We delete outputs that are connected to no other node
+    const downstreamNodes = getDownstreamNodes(deletedNodes, reactFlowInstance)
+    toDelete = toDelete.concat(downstreamNodes.filter(n => n.type === 'output' && getConnectedEdges([n], allEdges).length === 1))
+
+    //version 11.2 will allow reactFlowInstance.deleteElements(toDelete)
+    const deleteIds = toDelete.map(n => n.id)
+    setNodes(nodes => nodes.filter(n => !deleteIds.includes(n.id)))
+  }, [reactFlowInstance, setNodes])
 
   const onDrop = useCallback((event) => {
       event.preventDefault();
@@ -183,7 +233,8 @@ export function PipelineEditor(props) {
           newNode.data = { 
             descriptionFile: descriptionFile,
             setToolTip: setToolTip,
-            injectConstant: injectConstant
+            injectConstant: injectConstant,
+            injectOutput: injectOutput
            }
           break;
         case 'output':
@@ -196,7 +247,7 @@ export function PipelineEditor(props) {
 
       setNodes((nds) => nds.concat(newNode));
     },
-    [reactFlowInstance]
+    [reactFlowInstance, injectConstant, injectOutput, setNodes]
   )
 
   /**
@@ -300,6 +351,7 @@ export function PipelineEditor(props) {
               case 'io':
                 node.data.setToolTip = setToolTip
                 node.data.injectConstant = injectConstant
+                node.data.injectOutput = injectOutput
                 break;
               case 'constant':
                 node.data.onChange = onConstantValueChange
@@ -330,7 +382,7 @@ export function PipelineEditor(props) {
 
 
   return <div id='editorLayout'>
-    <p>Need help? Check out <a href="https://github.com/GEO-BON/biab-2.0/blob/main/docs/pipeline-editor.md" target='_blank' rel='noreferrer'>the documentation</a></p>
+    <p>Need help? Check out <a href="https://github.com/GEO-BON/biab-2.0/#pipelines" target='_blank' rel='noreferrer'>the documentation</a></p>
     <div className="dndflow">
       <ReactFlowProvider>
         <div className="reactflow-wrapper" ref={reactFlowWrapper}>
@@ -345,6 +397,7 @@ export function PipelineEditor(props) {
             onDrop={onDrop}
             onDragOver={onDragOver}
             onSelectionChange={onSelectionChange}
+            onNodesDelete={onNodesDelete}
             deleteKeyCode='Delete'
           >
             {toolTip && <div className="tooltip">

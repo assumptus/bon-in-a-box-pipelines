@@ -21,7 +21,9 @@ export function Layout(props) {
   return (
     <>
       <div className="left-pane">
-        <img id="logo" src={BiaBLogo} alt="BON in a Box logo" />
+        <div>
+          <img id="logo" src={BiaBLogo} alt="BON in a Box logo" />
+        </div>
         {props.left}
       </div>
 
@@ -33,6 +35,15 @@ export function Layout(props) {
           &nbsp;|&nbsp;
           <NavLink to="/pipeline-editor">Pipeline editor</NavLink>
         </nav>
+
+        {props.popupContent && 
+          <div className='fullScreenPopup'>
+            <div className='content'>
+              {props.popupContent}
+            </div>
+            <a title="Close" className='close' onClick={() => props.setPopupContent(null)}>×</a>
+          </div>
+        }
 
         <main style={{height: mainHeight}}>
           {props.right}

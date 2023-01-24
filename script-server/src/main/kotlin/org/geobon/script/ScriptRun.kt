@@ -5,7 +5,7 @@ import com.google.gson.JsonParseException
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.MalformedJsonException
 import kotlinx.coroutines.*
-import org.openapitools.server.utils.toMD5
+import org.geobon.pipeline.RunContext
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import java.io.File
@@ -14,36 +14,38 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.TimeoutException
 import kotlin.math.floor
+import kotlin.time.Duration
+import kotlin.time.Duration.Companion.hours
+import kotlin.time.DurationUnit
 
-val outputRoot = File(System.getenv("OUTPUT_LOCATION"))
 
-class ScriptRun(private val scriptFile: File, private val inputFileContent: String?) {
-    constructor(scriptFile: File, inputMap: SortedMap<String, Any>)
-            : this(scriptFile, if (inputMap.isEmpty()) null else toJson(inputMap))
+class ScriptRun( // Constructor used in single script run
+    private val scriptFile: File,
+    private val inputFileContent: String?,
+    context: RunContext = RunContext(scriptFile, inputFileContent),
+    private val timeout: Duration = DEFAULT_TIMEOUT) {
+
+    // Constructor used in pipelines & tests
+    constructor(
+        scriptFile: File,
+        inputMap: SortedMap<String, Any>,
+        context: RunContext = RunContext(scriptFile, inputMap.toString()),
+        timeout: Duration = DEFAULT_TIMEOUT
+    ) : this(scriptFile, if (inputMap.isEmpty()) null else toJson(inputMap), context, timeout)
 
     lateinit var results: Map<String, Any>
         private set
 
-    /**
-     * A unique string identifier representing a run of this script with these specific parameters.
-     * i.e. Calling the same script with the same param would result in the same ID.
-     */
-    val id = File(
-        // Unique to this script
-        scriptFile.relativeTo(scriptRoot).path,
-        // Unique to these params
-        inputFileContent?.toMD5() ?: "no_params"
-    ).path.replace('.', '_')
-
-    private val outputFolder = File(outputRoot, id)
-    private val inputFile = File(outputFolder, "input.json")
-    internal val resultFile = File(outputFolder, "output.json")
+    private val outputFolder = context.outputFolder
+    private val inputFile = context.inputFile
+    val resultFile = context.resultFile
 
     private val logger: Logger = LoggerFactory.getLogger(scriptFile.name)
-    val logFile = File(outputFolder, "logs.txt")
+    internal val logFile = File(outputFolder, "logs.txt")
 
     companion object {
         const val ERROR_KEY = "error"
+        val DEFAULT_TIMEOUT = 1.hours
 
         private val gson = GsonBuilder()
             .setObjectToNumberStrategy { reader ->
@@ -67,9 +69,6 @@ class ScriptRun(private val scriptFile: File, private val inputFileContent: Stri
             .create()
 
         fun toJson(src: Any): String = gson.toJson(src)
-
-        val scriptRoot: File
-            get() = File(System.getenv("SCRIPT_LOCATION"))
     }
 
     suspend fun execute() {
@@ -113,19 +112,20 @@ class ScriptRun(private val scriptFile: File, private val inputFileContent: Stri
         if (inputFile.exists()) {
             val cacheTime = resultFile.lastModified()
             kotlin.runCatching {
-                gson.fromJson<Map<String, Any>>(
+                gson.fromJson<Map<String, Any?>>(
                     inputFile.readText().also { logger.trace("Cached inputs: $it") },
-                    object : TypeToken<Map<String, Any>>() {}.type
+                    object : TypeToken<Map<String, Any?>>() {}.type
                 )
             }.onSuccess { inputs ->
                 inputs.forEach { (_, value) ->
-                    val stringValue = value.toString()
-                    // We assume that all local paths start with / and that URLs won't.
-                    if (stringValue.startsWith('/')) {
-                        with(File(stringValue)) {
-                            // check if missing or newer than cache
-                            if (!exists() || cacheTime < lastModified()) {
-                                return false
+                    value?.toString().let { stringValue ->
+                        // We assume that all local paths start with / and that URLs won't.
+                        if (stringValue?.startsWith('/') == true) {
+                            with(File(stringValue)) {
+                                // check if missing or newer than cache
+                                if (!exists() || cacheTime < lastModified()) {
+                                    return false
+                                }
                             }
                         }
                     }
@@ -185,7 +185,7 @@ class ScriptRun(private val scriptFile: File, private val inputFileContent: Stri
             }
 
             ProcessBuilder(command + scriptFile.absolutePath + outputFolder.absolutePath)
-                .directory(scriptRoot)
+                .directory(RunContext.scriptRoot)
                 .redirectOutput(ProcessBuilder.Redirect.PIPE)
                 .redirectErrorStream(true) // Merges stderr into stdout
                 .start().also { process ->
@@ -194,8 +194,8 @@ class ScriptRun(private val scriptFile: File, private val inputFileContent: Stri
                         // if the user cancels or is 60 minutes delay expires.
                         val watchdog = launch {
                             try {
-                                delay(1000 * 60 * 60) // 1 hour timeout
-                                throw TimeoutException("Timeout occurred after 1h")
+                                delay(timeout.toLong(DurationUnit.MILLISECONDS))
+                                throw TimeoutException("Timeout occurred after $timeout")
 
                             } catch (ex: Exception) {
                                 if (process.isAlive) {

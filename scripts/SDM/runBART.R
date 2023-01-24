@@ -78,11 +78,15 @@ pred.CI <- setValues(pred.uncertainty, pred[,3] - pred[,2])   #Credible interval
 output_pred <- file.path(outputFolder, "sdm_pred.tif")
 raster::writeRaster(x = pred.r,
                           filename = output_pred,
+                          format='COG',
+                          options=c("COMPRESS=DEFLATE"),
                           overwrite = TRUE)
 
 output_uncertainty <- file.path(outputFolder, "sdm_CI.tif")
 raster::writeRaster(x = pred.CI,
                           output_uncertainty,
+                          format='COG',
+                          options=c("COMPRESS=DEFLATE"),
                           overwrite = TRUE)
  
 output <- list("sdm_pred" = output_pred,

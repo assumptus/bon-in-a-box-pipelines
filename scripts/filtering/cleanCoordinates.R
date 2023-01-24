@@ -34,7 +34,7 @@ print(input)
 presence <- read.table(file = input$presence, sep = '\t', header = TRUE) 
 
 # Import of predictors
-predictors <- terra::rast(input$predictors)
+predictors <- terra::rast(unlist(input$predictors))
 proj <- terra::crs(predictors)
 
 # Projecting observations into predictors projection
@@ -51,7 +51,7 @@ proj_from = "+proj=longlat +datum=WGS84", proj_to = proj, new_lon = "lon", new_l
       lat = "lat",
       species_col = "scientific_name",
       tests = input$tests,
-      threshold_env = 0.8,
+      threshold_env = input$threshold_env,
        report = F,
    value = "clean"
     )
@@ -66,8 +66,7 @@ write.table(clean_presence, clean_presence.output,
              append = F, row.names = F, col.names = T, sep = "\t")
 
 
-  output <- list("n_observations" =  nrow(presence),
-                 "n_clean" = nrow(clean_presence),
+  output <- list("n_clean" = nrow(clean_presence),
                   "clean_presence" = clean_presence.output
                   ) 
 jsonData <- toJSON(output, indent=2)
