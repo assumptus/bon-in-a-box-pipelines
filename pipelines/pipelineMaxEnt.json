@@ -681,13 +681,6 @@
       "id": "reactflow__edge-37study_extent-40extent"
     },
     {
-      "source": "23",
-      "sourceHandle": "predictors",
-      "target": "49",
-      "targetHandle": "predictors",
-      "id": "reactflow__edge-23predictors-49predictors"
-    },
-    {
       "source": "62",
       "sourceHandle": null,
       "target": "37",
@@ -843,37 +836,6 @@
       "target": "44",
       "targetHandle": "runs_n",
       "id": "reactflow__edge-46-44runs_n"
-    },
-    {
-      "source": "52",
-      "sourceHandle": null,
-      "target": "49",
-      "targetHandle": "partition_type",
-      "id": "reactflow__edge-52-49partition_type"
-    },
-    {
-      "source": "58",
-      "sourceHandle": null,
-      "target": "15",
-      "targetHandle": "bbox",
-      "id": "reactflow__edge-58-15bbox",
-      "selected": false
-    },
-    {
-      "source": "60",
-      "sourceHandle": null,
-      "target": "23",
-      "targetHandle": "variables",
-      "id": "reactflow__edge-60-23variables",
-      "selected": false
-    },
-    {
-      "source": "26",
-      "sourceHandle": null,
-      "target": "23",
-      "targetHandle": "remove_collinearity",
-      "id": "reactflow__edge-26-23remove_collinearity",
-      "selected": false
     },
     {
       "source": "47",
