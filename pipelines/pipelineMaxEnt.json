@@ -626,7 +626,7 @@
       "dragHandle": ".dragHandle",
       "data": {
         "type": "application/dbf",
-        "value": "/scripts/SDM/mask_US_QC.shp"
+        "value": ""
       }
     }
   ],

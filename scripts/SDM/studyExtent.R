@@ -25,11 +25,10 @@ width_buffer <- input$width_buffer
 }
 
 
-if (!is.null(input$mask)) {
-mask <- terra::vect(input$mask)
+if (!is.null(input$mask) && input$mask != "") {
+        mask <- terra::vect(input$mask)
 } else { 
         mask <- NULL
-    
 }
 
 study_extent <- create_study_extent(presence, 
