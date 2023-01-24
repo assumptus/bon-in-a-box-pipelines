@@ -9,7 +9,7 @@ inputs:
       - df_coordinates
       - box_coordinates
       - shapefile
-    example: 
+    example: df_coordinates
   df_coordinates:
     label: df coordinates
     description: dataframe, containing coordinates
