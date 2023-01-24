@@ -324,8 +324,8 @@
       "id": "45",
       "type": "constant",
       "position": {
-        "x": 1792,
-        "y": 488.5
+        "x": 1790.4609927798392,
+        "y": 460.79787003710464
       },
       "dragHandle": ".dragHandle",
       "data": {
@@ -596,10 +596,41 @@
         "type": "int",
         "value": "10000"
       }
+    },
+    {
+      "id": "66",
+      "type": "constant",
+      "position": {
+        "x": 1836.541123487015,
+        "y": 492.8993807711821
+      },
+      "dragHandle": ".dragHandle",
+      "data": {
+        "type": "options",
+        "value": "lat_lon",
+        "options": [
+          "lat_lon",
+          "lon_lat",
+          "lon_lon",
+          "lat_lat"
+        ]
+      }
+    },
+    {
+      "id": "67",
+      "type": "constant",
+      "position": {
+        "x": 827.8362419343546,
+        "y": 392.87645506054133
+      },
+      "dragHandle": ".dragHandle",
+      "data": {
+        "type": "application/dbf",
+        "value": "/scripts/SDM/mask_US_QC.shp"
+      }
     }
   ],
   "edges": [
-    
     {
       "source": "15",
       "sourceHandle": "presence",
@@ -679,13 +710,6 @@
       "target": "40",
       "targetHandle": "extent",
       "id": "reactflow__edge-37study_extent-40extent"
-    },
-    {
-      "source": "62",
-      "sourceHandle": null,
-      "target": "37",
-      "targetHandle": "proj",
-      "id": "reactflow__edge-62-37proj"
     },
     {
       "source": "40",
@@ -958,12 +982,26 @@
       "target": "15",
       "targetHandle": "limit",
       "id": "reactflow__edge-65-15limit"
+    },
+    {
+      "source": "66",
+      "sourceHandle": null,
+      "target": "44",
+      "targetHandle": "orientation_block",
+      "id": "reactflow__edge-66-44orientation_block"
+    },
+    {
+      "source": "67",
+      "sourceHandle": null,
+      "target": "37",
+      "targetHandle": "mask",
+      "id": "reactflow__edge-67-37mask"
     }
   ],
   "viewport": {
-    "x": 224.98633866090972,
-    "y": 137.2471914824814,
-    "zoom": 0.8088813483617395
+    "x": -398.6134662733816,
+    "y": -119.40994602648402,
+    "zoom": 0.9473700705992675
   },
   "inputs": {
     "data>getObservations.yml@15.species": {
@@ -982,7 +1020,7 @@
       "description": "Integer, 4 digit year, end date to retrieve occurrences",
       "label": "end year",
       "type": "int",
-      "example": 2020 
+      "example": 2020
     }
   }
 }
