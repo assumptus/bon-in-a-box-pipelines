@@ -4,8 +4,8 @@
       "id": "2",
       "type": "io",
       "position": {
-        "x": 925.0333251953125,
-        "y": 137.6666717529297
+        "x": 1247,
+        "y": 282.83333333333326
       },
       "data": {
         "descriptionFile": "Block3>block3.json"
@@ -15,8 +15,8 @@
       "id": "6",
       "type": "output",
       "position": {
-        "x": 1242.0333251953125,
-        "y": 115.66667175292969
+        "x": 1553,
+        "y": 253.33333333333326
       },
       "data": {
         "label": "Output"
@@ -26,8 +26,8 @@
       "id": "7",
       "type": "output",
       "position": {
-        "x": 1238.0333251953125,
-        "y": 59.66667175292969
+        "x": 1553,
+        "y": 204.33333333333326
       },
       "data": {
         "label": "Output"
@@ -37,8 +37,8 @@
       "id": "8",
       "type": "output",
       "position": {
-        "x": 1238.0333251953125,
-        "y": 166.6666717529297
+        "x": 1553,
+        "y": 420.33333333333326
       },
       "data": {
         "label": "Output"
@@ -48,8 +48,8 @@
       "id": "9",
       "type": "output",
       "position": {
-        "x": 1230.0333251953125,
-        "y": 209.66667175292974
+        "x": 1553,
+        "y": 371.33333333333326
       },
       "data": {
         "label": "Output"
@@ -59,8 +59,8 @@
       "id": "10",
       "type": "output",
       "position": {
-        "x": 1234.0333251953125,
-        "y": 258.6666717529297
+        "x": 1553,
+        "y": 469.33333333333326
       },
       "data": {
         "label": "Output"
@@ -70,8 +70,8 @@
       "id": "13",
       "type": "constant",
       "position": {
-        "x": -309.8436564538596,
-        "y": 59.82953375442659
+        "x": 12,
+        "y": 173.16666666666663
       },
       "dragHandle": ".dragHandle",
       "data": {
@@ -83,8 +83,8 @@
       "id": "15",
       "type": "userInput",
       "position": {
-        "x": 577.3424394757504,
-        "y": 119.82307745771763
+        "x": 1018,
+        "y": 22
       },
       "dragHandle": ".dragHandle",
       "data": {
@@ -96,8 +96,8 @@
       "id": "16",
       "type": "userInput",
       "position": {
-        "x": 579.0500749045328,
-        "y": 169.34450489240984
+        "x": 942,
+        "y": 57
       },
       "dragHandle": ".dragHandle",
       "data": {
@@ -109,8 +109,8 @@
       "id": "17",
       "type": "userInput",
       "position": {
-        "x": -262.5710943105202,
-        "y": 316.49775910028137
+        "x": 81,
+        "y": 605.6666666666665
       },
       "dragHandle": ".dragHandle",
       "data": {
@@ -122,8 +122,8 @@
       "id": "18",
       "type": "userInput",
       "position": {
-        "x": -288.08059049512553,
-        "y": 269.73034942850495
+        "x": 106,
+        "y": 103.16666666666663
       },
       "dragHandle": ".dragHandle",
       "data": {
@@ -135,8 +135,8 @@
       "id": "19",
       "type": "userInput",
       "position": {
-        "x": -253.00503324129323,
-        "y": 233.5918965003142
+        "x": 72,
+        "y": 138.16666666666663
       },
       "dragHandle": ".dragHandle",
       "data": {
@@ -148,8 +148,8 @@
       "id": "21",
       "type": "io",
       "position": {
-        "x": 98.76571216521495,
-        "y": 222.42475920364427
+        "x": 388,
+        "y": 524.8333333333333
       },
       "data": {
         "descriptionFile": "SDM>BRT_julia_viewer.json"
@@ -159,8 +159,8 @@
       "id": "22",
       "type": "userInput",
       "position": {
-        "x": -268.88055104782734,
-        "y": 352.5328449751833
+        "x": 84,
+        "y": 642.9999999999999
       },
       "dragHandle": ".dragHandle",
       "data": {
@@ -172,8 +172,8 @@
       "id": "23",
       "type": "output",
       "position": {
-        "x": 892.2867257915447,
-        "y": 285.70797712861906
+        "x": 1247,
+        "y": 753.3333333333333
       },
       "data": {
         "label": "Output"
@@ -183,8 +183,8 @@
       "id": "24",
       "type": "output",
       "position": {
-        "x": 889.2867257915447,
-        "y": 335.70797712861906
+        "x": 1247,
+        "y": 704.3333333333333
       },
       "data": {
         "label": "Output"
@@ -194,8 +194,8 @@
       "id": "25",
       "type": "output",
       "position": {
-        "x": 892.2867257915447,
-        "y": 389.70797712861906
+        "x": 1247,
+        "y": 655.3333333333333
       },
       "data": {
         "label": "Output"
@@ -205,11 +205,45 @@
       "id": "26",
       "type": "output",
       "position": {
-        "x": 171.77620597226291,
-        "y": 460.8395162989724
+        "x": 388,
+        "y": 92
       },
       "data": {
         "label": "Output"
+      }
+    },
+    {
+      "id": "27",
+      "type": "constant",
+      "position": {
+        "x": 856,
+        "y": 210.83333333333326
+      },
+      "dragHandle": ".dragHandle",
+      "data": {
+        "type": "text[]",
+        "value": [
+          "chelsa-clim|bio1",
+          "chelsa-clim|bio2",
+          "chelsa-clim|bio3",
+          "chelsa-clim|bio4",
+          "chelsa-clim|bio5",
+          "chelsa-clim|bio6",
+          "chelsa-clim|bio7",
+          "chelsa-clim|bio8",
+          "chelsa-clim|bio9",
+          "chelsa-clim|bio10",
+          "chelsa-clim|bio11",
+          "chelsa-clim|bio12",
+          "chelsa-clim|bio13",
+          "chelsa-clim|bio14",
+          "chelsa-clim|bio15",
+          "chelsa-clim|bio16",
+          "chelsa-clim|bio17",
+          "chelsa-clim|bio18",
+          "chelsa-clim|bio19",
+          ""
+        ]
       }
     }
   ],
@@ -339,15 +373,16 @@
       "target": "26",
       "targetHandle": null,
       "id": "reactflow__edge-18-26"
+    },
+    {
+      "source": "27",
+      "sourceHandle": null,
+      "target": "2",
+      "targetHandle": "pipeline@6",
+      "id": "reactflow__edge-27-2pipeline@6"
     }
   ],
   "inputs": {
-    "Block3>block3.json@2|pipeline@6": {
-      "description": "Vector of strings, collection name followed by '|' followed by item id",
-      "label": "collections_items",
-      "type": "text[]",
-      "example": ["chelsa-clim|bio1", "chelsa-clim|bio2"]
-    },
     "pipeline@15": {
       "label": "k",
       "description": "the value of k for the k-means algorithm",
@@ -452,7 +487,7 @@
     },
     "pipeline@18": {
       "label": "Species name",
-      "description": "Species for which the sampling prioritization is done",
+      "description": "Species for which the BON optimization is performed",
       "weight": 1
     }
   },
