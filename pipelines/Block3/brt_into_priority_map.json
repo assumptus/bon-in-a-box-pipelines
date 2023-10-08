@@ -484,13 +484,13 @@
       "weight": 9
     },
     "Block3>block3.json@26|data>loadFromStac.yml@9|rasters": {
-      "description": "Environmental layers used as predictors in species distribution modeling",
+      "description": "Land cover layer used for masking non-terrestrial habitats",
       "label": "rasters",
       "type": "image/tiff;application=geotiff[]",
       "weight": 3
     },
     "Block3>block3.json@26|data>loadFromStac.yml@1|rasters": {
-      "description": "Land cover layer used for masking non-terrestrial habitats",
+      "description": "Environmental layers used as predictors in species distribution modeling",
       "label": "rasters",
       "type": "image/tiff;application=geotiff[]",
       "weight": 4
