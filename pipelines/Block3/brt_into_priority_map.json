@@ -241,8 +241,7 @@
           "chelsa-clim|bio16",
           "chelsa-clim|bio17",
           "chelsa-clim|bio18",
-          "chelsa-clim|bio19",
-          ""
+          "chelsa-clim|bio19"
         ]
       }
     }
@@ -487,7 +486,7 @@
     },
     "pipeline@18": {
       "label": "Species name",
-      "description": "Species for which the BON optimization is performed",
+      "description": "Species for which the BON prioritization is performed",
       "weight": 1
     }
   },
