@@ -478,7 +478,7 @@
       "weight": 8
     },
     "Block3>block3.json@26|Block3>climateVelocity.yml@50|climate_velocity": {
-      "description": "map",
+      "description": "Map where higher pixel values means the climatic conditions are changing faster at that place relative to pixels with lower values",
       "label": "climate velocity",
       "type": "image/tiff;application=geotiff",
       "weight": 9
@@ -496,20 +496,20 @@
       "weight": 4
     },
     "Block3>block3.json@26|Block3>climateUniqueness.yml@16|climate_uniqueness": {
-      "description": "Map of climate uniqueness",
+      "description": "Map where higher pixel values means the climatic conditions are more unique/rare than lower value-pixels",
       "label": "climate uniqueness",
       "type": "image/tiff;application=geotiff",
       "weight": 10
     },
     "Block3>block3.json@26|Block3>weightLayers.yml@44|priority_map": {
-      "description": "Sampling priority map.",
-      "label": "priority_map",
+      "description": "Sampling priority map based on weighting accessibility, climate uniqueness, climate velocity, and SDM uncertainty",
+      "label": "priority map",
       "type": "image/tiff;application=geotiff",
       "weight": 10
     },
     "pipeline@18": {
       "label": "Species name",
-      "description": "Species for which the BON prioritization is calculated",
+      "description": "Species for which the sampling prioritization is calculated",
       "weight": 1
     },
     "SDM>BRT_julia_viewer.json@21|SDM>julia_sdms>fitBRT.yml@24|sdm_uncertainty": {
@@ -520,7 +520,7 @@
     }
   },
   "metadata": {
-    "name": "BON prioritization based on species distribution modeling",
+    "name": "Sampling prioritization based on species distribution modeling",
     "description": "This is a pipeline that contains two pipelines, first to compute and SDM using BRTs, and second to take the SDM uncertainty and weigh it with accessibility, climate uniqueness, and climate velocity to produce a sampling priority map for a selected species.",
     "author": [
       {
