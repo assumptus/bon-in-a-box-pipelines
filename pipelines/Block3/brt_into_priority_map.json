@@ -520,12 +520,11 @@
     }
   },
   "metadata": {
-    "name": "Block 3 w/ BRT SDM",
-    "description": "This is a pipeline that contains two pipelines, first to compute and SDM using BRTs, and second to take the SDM uncertainty and weigh it with accessibility, climate uniqueness, and climate velocity to produce a sampling priority map.",
+    "name": "BON prioritization based on species distribution modeling",
+    "description": "This is a pipeline that contains two pipelines, first to compute and SDM using BRTs, and second to take the SDM uncertainty and weigh it with accessibility, climate uniqueness, and climate velocity to produce a sampling priority map for a selected species.",
     "author": [
       {
-        "name": "Michael D. Catchen",
-        "identifier": null
+        "name": "Michael D. Catchen"
       }
     ],
     "license": "MIT",
