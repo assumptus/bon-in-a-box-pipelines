@@ -15,13 +15,23 @@ output:
 Estimation of Hypotheses for Spatial Delimitation of Discrete
 Populations.
 ================
-true
 
-- [Estimation of Hypotheses for Spatial Delimitation of Discrete
-  Populations – Contributions to the methodology of the complementary
-  genetic indicator for the Kunming-Montreal GBF (Hoban et al., 2023;
-  Mastretta‐Yanes et al.,
-  2024).](#estimation-of-hypotheses-for-spatial-delimitation-of-discrete-populations--contributions-to-the-methodology-of-the-complementary-genetic-indicator-for-the-kunming-montreal-gbf-hoban-et-al-2023-mastrettayanes-et-al-2024)
+# Estimation of Hypotheses for Spatial Delimitation of Discrete Populations – Contributions to the methodology of the complementary genetic indicator for the Kunming-Montreal GBF (Hoban et al., 2023; Mastretta‐Yanes et al., 2024).
+
+This workflow estimates hypotheses for the spatial delimitation of
+discrete populations of species based on secondary information. It was
+developed to support the proposed methodology for indicators designed to
+monitor the loss of genetic diversity, as outlined in the
+Kunming-Montreal Global Biodiversity Framework (GBF), using secondary
+data sources.
+
+This preliminary version was compiled in one afternoon, utilizing weeks
+of recycled code. While we are aware that conceptual and mathematical
+support needs to be strengthened, we have decided to share this initial
+version due to its practical potential, with the aim of obtaining
+feedback and building knowledge networks that will help us develop a
+more robust tool.
+
   - [Justification](#justification)
   - [Assumptions](#assumptions)
     - [How to define threshold (cut-off)
@@ -44,22 +54,6 @@ true
 - [](#section-2)
   - [map_hypothesis](#map_hypothesis)
 - [](#section-3)
-
-# Estimation of Hypotheses for Spatial Delimitation of Discrete Populations – Contributions to the methodology of the complementary genetic indicator for the Kunming-Montreal GBF (Hoban et al., 2023; Mastretta‐Yanes et al., 2024).
-
-This workflow estimates hypotheses for the spatial delimitation of
-discrete populations of species based on secondary information. It was
-developed to support the proposed methodology for indicators designed to
-monitor the loss of genetic diversity, as outlined in the
-Kunming-Montreal Global Biodiversity Framework (GBF), using secondary
-data sources.
-
-This preliminary version was compiled in one afternoon, utilizing weeks
-of recycled code. While we are aware that conceptual and mathematical
-support needs to be strengthened, we have decided to share this initial
-version due to its practical potential, with the aim of obtaining
-feedback and building knowledge networks that will help us develop a
-more robust tool.
 
 ### Justification
 
@@ -209,3 +203,20 @@ data_hypothesis
 # 
 
 ![](README_figures/Step%20Pops_from_distance%20map_hypotesis.png)
+
+## References
+
+Chamberlain, S., Oldoni, D., Barve, V., Desmet, P., Geffert, L.,
+Mcglinn, D., et al. (2024). rgbif: Interface to the Global Biodiversity
+Information Facility API. Available at:
+<https://cran.r-project.org/web/packages/rgbif/index.html> (Accessed
+October 2, 2024). Hoban, S., Da Silva, J. M., Mastretta‐Yanes, A.,
+Grueber, C. E., Heuertz, M., Hunter, M. E., et al. (2023). Monitoring
+status and trends in genetic diversity for the Convention on Biological
+Diversity: An ongoing assessment of genetic indicators in nine
+countries. Conservation Letters. 16, e12953. doi: 10.1111/conl.12953
+Mastretta‐Yanes, A., Da Silva, J. M., Grueber, C. E., Castillo‐Reina,
+L., Köppä, V., Forester, B. R., et al. (2024). Multinational evaluation
+of genetic diversity indicators for the Kunming‐Montreal Global
+Biodiversity Framework. Ecology Letters 27, e14461. doi:
+10.1111/ele.14461

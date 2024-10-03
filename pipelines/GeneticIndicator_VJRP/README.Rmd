@@ -92,3 +92,7 @@ If the user knows the dispersal distance of the species, they can specify it. Th
 
 ![](README_figures/Step Pops_from_distance map_hypotesis.png)
 
+## References
+Chamberlain, S., Oldoni, D., Barve, V., Desmet, P., Geffert, L., Mcglinn, D., et al. (2024). rgbif: Interface to the Global Biodiversity Information Facility API. Available at: https://cran.r-project.org/web/packages/rgbif/index.html (Accessed October 2, 2024).
+Hoban, S., Da Silva, J. M., Mastretta‐Yanes, A., Grueber, C. E., Heuertz, M., Hunter, M. E., et al. (2023). Monitoring status and trends in genetic diversity for the Convention on Biological Diversity: An ongoing assessment of genetic indicators in nine countries. Conservation Letters. 16, e12953. doi: 10.1111/conl.12953
+Mastretta‐Yanes, A., Da Silva, J. M., Grueber, C. E., Castillo‐Reina, L., Köppä, V., Forester, B. R., et al. (2024). Multinational evaluation of genetic diversity indicators for the Kunming‐Montreal Global Biodiversity Framework. Ecology Letters 27, e14461. doi: 10.1111/ele.14461
