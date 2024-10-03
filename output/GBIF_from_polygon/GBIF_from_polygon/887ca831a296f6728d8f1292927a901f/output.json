@@ -1,0 +1,4 @@
+{
+  "data_presence": "/output/GBIF_from_polygon/GBIF_from_polygon/887ca831a296f6728d8f1292927a901f/data_mask.csv",
+  "vector_presence": "/output/GBIF_from_polygon/GBIF_from_polygon/887ca831a296f6728d8f1292927a901f/vector_presence_path.GeoJSON"
+}

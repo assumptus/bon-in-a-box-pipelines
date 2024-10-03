@@ -1,0 +1,66 @@
+2024-10-03 03:21:52 UTC
+Script was updated, flushing the cache for this script with option full.
+Script timestamp: 2024-10-03 03:21:47 UTC
+Result timestamp: 2024-10-03 03:18:38 UTC
+terra 1.7.78
+
+Attaching package: ‘terra’
+
+The following objects are masked from ‘package:magrittr’:
+
+    extract, inset
+
+Loading required package: sp
+Reading layer `vector_presence_path' from data source 
+  `/output/GBIF_from_polygon/GBIF_from_polygon/f94eb560ccfa2ca5b84e7a3bc2c2ba61/vector_presence_path.GeoJSON' 
+  using driver `GeoJSON'
+Simple feature collection with 5418 features and 167 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -77.27111 ymin: -3.91936 xmax: -67.70525 ymax: 11.5
+Geodetic CRS:  WGS 84
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+`summarise()` has grouped output by 'hipotesis'. You can override using the
+`.groups` argument.
+Saving 7 x 7 in image
+Deleting source `/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path/hip1_dist14142.GeoJSON' failed
+Writing layer `hip1_dist14142' to data source 
+  `/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path/hip1_dist14142.GeoJSON' using driver `GeoJSON'
+Writing 46 features with 4 fields and geometry type Polygon.
+Deleting source `/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path/hip2_dist26249.GeoJSON' failed
+Writing layer `hip2_dist26249' to data source 
+  `/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path/hip2_dist26249.GeoJSON' using driver `GeoJSON'
+Writing 29 features with 4 fields and geometry type Polygon.
+Deleting source `/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path/hip3_dist38210.GeoJSON' failed
+Writing layer `hip3_dist38210' to data source 
+  `/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path/hip3_dist38210.GeoJSON' using driver `GeoJSON'
+Writing 21 features with 4 fields and geometry type Polygon.
+Deleting source `/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path/hip4_dist50488.GeoJSON' failed
+Writing layer `hip4_dist50488' to data source 
+  `/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path/hip4_dist50488.GeoJSON' using driver `GeoJSON'
+Writing 14 features with 4 fields and geometry type Polygon.
+Deleting source `/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path/hip5_dist64133.GeoJSON' failed
+Writing layer `hip5_dist64133' to data source 
+  `/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path/hip5_dist64133.GeoJSON' using driver `GeoJSON'
+Writing 11 features with 4 fields and geometry type Polygon.
+Deleting source `/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path/hip6_dist79322.GeoJSON' failed
+Writing layer `hip6_dist79322' to data source 
+  `/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path/hip6_dist79322.GeoJSON' using driver `GeoJSON'
+Writing 8 features with 4 fields and geometry type Polygon.
+Deleting source `/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path/hip7_dist97622.GeoJSON' failed
+Writing layer `hip7_dist97622' to data source 
+  `/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path/hip7_dist97622.GeoJSON' using driver `GeoJSON'
+Writing 5 features with 4 fields and geometry type Polygon.
+There were 14 warnings (use warnings() to see them)
+           used  (Mb) gc trigger  (Mb) max used  (Mb)
+Ncells  3045170 162.7    5006054 267.4  5006054 267.4
+Vcells 12893680  98.4   62593097 477.6 78238336 597.0
+Runner: biab-runner-conda version 2024-10-02 13:29
+
+Elapsed: 20.460103509s

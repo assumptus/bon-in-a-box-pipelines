@@ -1,0 +1,16 @@
+{
+  "distance_map":"/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/distance_map.tif",
+  "data_hypothesis":"/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/data_hypothesis.csv",
+  "plot_hypothesis":"/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/plot_hypothesis.jpg",
+  "map_hypothesis":[
+"/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/hypothesis_tif_path/hip1_dist14142.tif",
+"/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/hypothesis_tif_path/hip2_dist26249.tif",
+"/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/hypothesis_tif_path/hip3_dist38210.tif",
+"/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/hypothesis_tif_path/hip4_dist50488.tif",
+"/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/hypothesis_tif_path/hip5_dist64133.tif",
+"/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/hypothesis_tif_path/hip6_dist79322.tif",
+"/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/hypothesis_tif_path/hip7_dist97622.tif"
+  ],
+  "folder_raster_hypothesis":"/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/hypothesis_tif_path",
+  "folder_polygon_hypothesis":"/output/Pops_from_distance/Pops_from_distance/605acecede607379f8a3010277def842/folder_hypothesis_vector_path"
+}

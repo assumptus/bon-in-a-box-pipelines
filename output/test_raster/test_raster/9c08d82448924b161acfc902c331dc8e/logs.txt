@@ -1,0 +1,20 @@
+2024-10-03 00:36:21 UTC
+Previous results not found: running for the first time.
+terra 1.7.78
+
+Attaching package: ‘terra’
+
+The following objects are masked from ‘package:magrittr’:
+
+    extract, inset
+
+Loading required package: sp
+Warning message:
+In dir.create(folder_adjustLayers) :
+  '/output/test_raster/test_raster/9c08d82448924b161acfc902c331dc8e/adjustLayers' already exists
+          used  (Mb) gc trigger  (Mb) max used  (Mb)
+Ncells 2476647 132.3    3775920 201.7  3775920 201.7
+Vcells 3233978  24.7    8388608  64.0  5399206  41.2
+Runner: biab-runner-conda version 2024-10-02 13:29
+
+Elapsed: 3.623710356s
