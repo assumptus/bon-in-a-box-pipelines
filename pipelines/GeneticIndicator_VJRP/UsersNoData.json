@@ -1,302 +1,6 @@
 {
   "nodes": [
     {
-      "id": "2",
-      "type": "io",
-      "position": {
-        "x": 681.5215051866958,
-        "y": 57.943370729519245
-      },
-      "data": {
-        "descriptionFile": "GBIF_from_polygon>GBIF_from_polygon.yml"
-      }
-    },
-    {
-      "id": "5",
-      "type": "io",
-      "position": {
-        "x": 617.9613708986117,
-        "y": -162.71334862999342
-      },
-      "data": {
-        "descriptionFile": "GetMap_Country>GetMap_Country.yml"
-      }
-    },
-    {
-      "id": "6",
-      "type": "constant",
-      "position": {
-        "x": 266.89577618106387,
-        "y": -261.6793879087138
-      },
-      "dragHandle": ".dragHandle",
-      "data": {
-        "type": "options",
-        "value": "Colombia",
-        "options": [
-          "Colombia",
-          "Canada",
-          "Afghanistan",
-          "Albania",
-          "Algeria",
-          "American Samoa",
-          "Andorra",
-          "Angola",
-          "Anguilla",
-          "Antarctica",
-          "Antigua and Barbuda",
-          "Argentina",
-          "Armenia",
-          "Aruba",
-          "Australia",
-          "Austria",
-          "Azerbaijan",
-          "Bahamas",
-          "Bahrain",
-          "Bangladesh",
-          "Barbados",
-          "Belarus",
-          "Belgium",
-          "Belize",
-          "Benin",
-          "Bermuda",
-          "Bhutan",
-          "Bolivia, Plurinational State of",
-          "Bonaire, Sint Eustatius and Saba",
-          "Bosnia and Herzegovina",
-          "Botswana",
-          "Bouvet Island",
-          "Brazil",
-          "British Indian Ocean Territory",
-          "Brunei Darussalam",
-          "Bulgaria",
-          "Burkina Faso",
-          "Burundi",
-          "Cabo Verde",
-          "Cambodia",
-          "Cameroon",
-          "Cayman Islands",
-          "Central African Republic",
-          "Chad",
-          "Chile",
-          "China",
-          "Christmas Island",
-          "Cocos (Keeling) Islands",
-          "Comoros",
-          "Congo",
-          "Congo, The Democratic Republic of the",
-          "Cook Islands",
-          "Costa Rica",
-          "Croatia",
-          "Cuba",
-          "Curaçao",
-          "Cyprus",
-          "Czechia",
-          "Côte d'Ivoire",
-          "Denmark",
-          "Djibouti",
-          "Dominica",
-          "Dominican Republic",
-          "Ecuador",
-          "Egypt",
-          "El Salvador",
-          "Equatorial Guinea",
-          "Eritrea",
-          "Estonia",
-          "Eswatini",
-          "Ethiopia",
-          "Falkland Islands (Malvinas)",
-          "Faroe Islands",
-          "Fiji",
-          "Finland",
-          "France",
-          "French Guiana",
-          "French Polynesia",
-          "French Southern Territories",
-          "Gabon",
-          "Gambia",
-          "Georgia",
-          "Germany",
-          "Ghana",
-          "Gibraltar",
-          "Greece",
-          "Greenland",
-          "Grenada",
-          "Guadeloupe",
-          "Guam",
-          "Guatemala",
-          "Guernsey",
-          "Guinea",
-          "Guinea-Bissau",
-          "Guyana",
-          "Haiti",
-          "Heard Island and McDonald Islands",
-          "Holy See (Vatican City State)",
-          "Honduras",
-          "Hong Kong",
-          "Hungary",
-          "Iceland",
-          "India",
-          "Indonesia",
-          "Iran, Islamic Republic of",
-          "Iraq",
-          "Ireland",
-          "Israel",
-          "Italy",
-          "Jamaica",
-          "Japan",
-          "Jersey",
-          "Jordan",
-          "Kazakhstan",
-          "Kenya",
-          "Kiribati",
-          "Korea, Democratic People's Republic of",
-          "Korea, Republic of",
-          "Kuwait",
-          "Kyrgyzstan",
-          "Lao People's Democratic Republic",
-          "Latvia",
-          "Lebanon",
-          "Lesotho",
-          "Liberia",
-          "Libya",
-          "Liechtenstein",
-          "Lithuania",
-          "Luxembourg",
-          "Macao",
-          "Madagascar",
-          "Malawi",
-          "Malaysia",
-          "Maldives",
-          "Mali",
-          "Malta",
-          "Marshall Islands",
-          "Martinique",
-          "Mauritania",
-          "Mauritius",
-          "Mayotte",
-          "Mexico",
-          "Micronesia, Federated States of",
-          "Moldova, Republic of",
-          "Monaco",
-          "Mongolia",
-          "Montenegro",
-          "Montserrat",
-          "Morocco",
-          "Mozambique",
-          "Myanmar",
-          "Namibia",
-          "Nauru",
-          "Nepal",
-          "Netherlands",
-          "Netherlands Antilles",
-          "New Caledonia",
-          "New Zealand",
-          "Nicaragua",
-          "Niger",
-          "Nigeria",
-          "Niue",
-          "Norfolk Island",
-          "North Macedonia",
-          "Northern Mariana Islands",
-          "Norway",
-          "Oman",
-          "Pakistan",
-          "Palau",
-          "Palestine, State of",
-          "Panama",
-          "Papua New Guinea",
-          "Paraguay",
-          "Peru",
-          "Philippines",
-          "Pitcairn",
-          "Poland",
-          "Portugal",
-          "Puerto Rico",
-          "Qatar",
-          "Romania",
-          "Russian Federation",
-          "Rwanda",
-          "Réunion",
-          "Saint Barthélemy",
-          "Saint Helena, Ascension and Tristan da Cunha",
-          "Saint Kitts and Nevis",
-          "Saint Lucia",
-          "Saint Martin (French part)",
-          "Saint Pierre and Miquelon",
-          "Saint Vincent and the Grenadines",
-          "Samoa",
-          "San Marino",
-          "Sao Tome and Principe",
-          "Saudi Arabia",
-          "Senegal",
-          "Serbia",
-          "Seychelles",
-          "Sierra Leone",
-          "Singapore",
-          "Sint Maarten (Dutch part)",
-          "Slovakia",
-          "Slovenia",
-          "Solomon Islands",
-          "Somalia",
-          "South Africa",
-          "South Georgia and the South Sandwich Islands",
-          "South Sudan",
-          "Spain",
-          "Sri Lanka",
-          "Sudan",
-          "Suriname",
-          "Svalbard and Jan Mayen",
-          "Sweden",
-          "Switzerland",
-          "Syrian Arab Republic",
-          "Taiwan, Province of China",
-          "Tajikistan",
-          "Tanzania, United Republic of",
-          "Thailand",
-          "Timor-Leste",
-          "Togo",
-          "Tokelau",
-          "Tonga",
-          "Trinidad and Tobago",
-          "Tunisia",
-          "Turkey",
-          "Turkmenistan",
-          "Turks and Caicos Islands",
-          "Tuvalu",
-          "Uganda",
-          "Ukraine",
-          "United Arab Emirates",
-          "United Kingdom of Great Britain and Northern Ireland",
-          "United States Minor Outlying Islands",
-          "United States of America",
-          "Uruguay",
-          "Uzbekistan",
-          "Vanuatu",
-          "Venezuela, Bolivarian Republic of",
-          "Viet Nam",
-          "Virgin Islands, British",
-          "Virgin Islands, U.S.",
-          "Wallis and Futuna",
-          "Western Sahara",
-          "Yemen",
-          "Zambia",
-          "Zimbabwe"
-        ]
-      }
-    },
-    {
-      "id": "15",
-      "type": "io",
-      "position": {
-        "x": 681.9851847685377,
-        "y": -33.73573007108989
-      },
-      "data": {
-        "descriptionFile": "vector_to_grid>vector_to_grid.yml"
-      }
-    },
-    {
       "id": "16",
       "type": "io",
       "position": {
@@ -319,57 +23,40 @@
       }
     },
     {
-      "id": "19",
-      "type": "constant",
+      "id": "24",
+      "type": "io",
       "position": {
-        "x": 264.51951637156435,
-        "y": -200.8078845120595
+        "x": 389.5333251953125,
+        "y": 279
       },
-      "dragHandle": ".dragHandle",
       "data": {
-        "type": "text[]",
-        "value": [
-          "Myrmecophaga tridactyla"
-        ]
+        "descriptionFile": "Pops_from_DispDist2>Pops_from_DispDist.yml"
+      }
+    },
+    {
+      "id": "26",
+      "type": "io",
+      "position": {
+        "x": 356.5333251953125,
+        "y": 247
+      },
+      "data": {
+        "descriptionFile": "Pops_from_DispDist>Pops_from_DispDist.yml"
+      }
+    },
+    {
+      "id": "27",
+      "type": "output",
+      "position": {
+        "x": 897.5333251953125,
+        "y": 274
+      },
+      "data": {
+        "label": "Output"
       }
     }
   ],
   "edges": [
-    {
-      "source": "5",
-      "sourceHandle": "map_country",
-      "target": "2",
-      "targetHandle": "vector_polygon",
-      "id": "reactflow__edge-5map_country-2vector_polygon"
-    },
-    {
-      "source": "6",
-      "sourceHandle": null,
-      "target": "5",
-      "targetHandle": "country",
-      "id": "reactflow__edge-6-5country"
-    },
-    {
-      "source": "5",
-      "sourceHandle": "map_country",
-      "target": "15",
-      "targetHandle": "vector_polygon",
-      "id": "reactflow__edge-5map_country-15vector_polygon"
-    },
-    {
-      "source": "15",
-      "sourceHandle": "vector_grid",
-      "target": "16",
-      "targetHandle": "grid_polygon",
-      "id": "reactflow__edge-15vector_grid-16grid_polygon"
-    },
-    {
-      "source": "2",
-      "sourceHandle": "vector_presence",
-      "target": "16",
-      "targetHandle": "vector_points",
-      "id": "reactflow__edge-2vector_presence-16vector_points"
-    },
     {
       "source": "16",
       "sourceHandle": "plot_hypothesis",
@@ -378,64 +65,38 @@
       "id": "reactflow__edge-16plot_hypothesis-17"
     },
     {
-      "source": "19",
-      "sourceHandle": null,
-      "target": "2",
-      "targetHandle": "species",
-      "id": "reactflow__edge-19-2species"
+      "source": "26",
+      "sourceHandle": "plot_hypothesis",
+      "target": "27",
+      "targetHandle": null,
+      "id": "reactflow__edge-26plot_hypothesis-27"
     }
   ],
   "inputs": {
-    "GetMap_Country>GetMap_Country.yml@5|scale": {
-      "description": "scale",
-      "label": "scale",
-      "type": "options",
-      "options": [
-        "110",
-        "50",
-        "10"
-      ],
-      "example": "110",
+    "Pops_from_DispDist>Pops_from_DispDist.yml@26|grid_map": {
+      "description": "Map used as the study area for estimating population polygon hypotheses (e.g., study area, species distribution model).",
+      "label": "grid_map",
+      "type": "image/tiff;application=geotiff",
+      "example": "/scripts/Pops_from_DispDist/input/raster_study_area_path.tif",
       "weight": 0
     },
-    "GBIF_from_polygon>GBIF_from_polygon.yml@2|country": {
-      "description": "Optional string, country to retrieve the occurrences from. Leave blank to ignore administrative boundaries.",
-      "label": "country",
-      "type": "text",
-      "example": "Colombia",
+    "Pops_from_DispDist>Pops_from_DispDist.yml@26|occ_points": {
+      "description": "Occurrence points of the species within the study area, used to calculate the distance map.",
+      "label": "occ_points",
+      "type": "application/geo+json,application/geopackage+sqlite3",
+      "example": "/scripts/Pops_from_DispDist/input/vector_presence_path.GeoJSON",
       "weight": 1
     },
-    "vector_to_grid>vector_to_grid.yml@15|EPSG": {
-      "description": "Numerical value for the EPSG code (European Petroleum Survey Group) associated with the spatial reference system (projection and geodetic datum) to be used for data in the study area. For further information on coordinate systems and EPSG codes visit https://epsg.org/home.html.",
-      "label": "EPSG",
+    "Pops_from_DispDist>Pops_from_DispDist.yml@26|DispersalDistance_m": {
+      "description": "Maximum known dispersal distance of the species in meters. If available, it is added as an additional hypothesis for defining population polygons; otherwise, hypotheses are estimated based on quantiles from the distance map values.",
+      "label": "DispersalDistance_m",
       "type": "int",
-      "example": 3395,
       "weight": 2
-    },
-    "vector_to_grid>vector_to_grid.yml@15|gridRes_meters": {
-      "description": "Numerical value referring to the spatial resolution (pixel size) in square meters to create a grid of the study area. This value indicates the level of detail or granularity at which the study area will be analyzed. Each pixel will be considered as a study site for occupancy analyses.",
-      "label": "gridRes_meters",
-      "type": "int",
-      "example": 1000,
-      "weight": 3
-    },
-    "vector_to_grid>vector_to_grid.yml@15|name_layer": {
-      "description": "name_layer",
-      "label": "name_layer",
-      "type": "text",
-      "example": "ID_grid",
-      "weight": 4
-    },
-    "Pops_from_distance>Pops_from_distance.yml@16|disperssion_distance_m": {
-      "description": "Numerical value for the distance.",
-      "label": "disperssion_distance",
-      "type": "int",
-      "weight": 5
     }
   },
   "outputs": {
-    "Pops_from_distance>Pops_from_distance.yml@16|plot_hypothesis": {
-      "description": "plot_hypothesis",
+    "Pops_from_DispDist>Pops_from_DispDist.yml@26|plot_hypothesis": {
+      "description": "Figure summarizing discrete population polygon hypotheses for each distance threshold",
       "label": "plot_hypothesis",
       "type": "image/jpg",
       "weight": 0

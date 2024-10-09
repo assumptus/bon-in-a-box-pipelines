@@ -1,0 +1,42 @@
+2024-10-03 00:40:59 UTC
+Previous results not found: running for the first time.
+terra 1.7.78
+
+Attaching package: ‘terra’
+
+The following objects are masked from ‘package:magrittr’:
+
+    extract, inset
+
+Loading required package: sp
+Reading layer `json_study_area_path' from data source 
+  `/scripts/Pops_from_distance/input/sp_map.GeoJSON' using driver `GeoJSON'
+Simple feature collection with 1 feature and 0 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -92.18961 ymin: -33.7092 xmax: -35.87234 ymax: 16.09904
+Geodetic CRS:  WGS 84
+Deleting source `/output/test_pols/test_pols/9c08d82448924b161acfc902c331dc8e/adjustLayers/a.GeoJSON' failed
+Writing layer `a' to data source 
+  `/output/test_pols/test_pols/9c08d82448924b161acfc902c331dc8e/adjustLayers/a.GeoJSON' using driver `GeoJSON'
+Writing 1 features with 0 fields and geometry type Multi Polygon.
+Reading layer `json_study_area_path' from data source 
+  `/scripts/Pops_from_distance/input/sp_map.GeoJSON' using driver `GeoJSON'
+Simple feature collection with 1 feature and 0 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -92.18961 ymin: -33.7092 xmax: -35.87234 ymax: 16.09904
+Geodetic CRS:  WGS 84
+Deleting source `/output/test_pols/test_pols/9c08d82448924b161acfc902c331dc8e/adjustLayers/b.GeoJSON' failed
+Writing layer `b' to data source 
+  `/output/test_pols/test_pols/9c08d82448924b161acfc902c331dc8e/adjustLayers/b.GeoJSON' using driver `GeoJSON'
+Writing 1 features with 0 fields and geometry type Multi Polygon.
+Warning message:
+In dir.create(folder_adjustLayers) :
+  '/output/test_pols/test_pols/9c08d82448924b161acfc902c331dc8e/adjustLayers' already exists
+          used  (Mb) gc trigger  (Mb) max used  (Mb)
+Ncells 2604788 139.2    4821288 257.5  3775795 201.7
+Vcells 3458765  26.4    8388608  64.0  5399210  41.2
+Runner: biab-runner-conda version 2024-10-02 13:29
+
+Elapsed: 4.179584509s

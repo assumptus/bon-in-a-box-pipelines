@@ -1,0 +1,51 @@
+2024-10-09 18:41:31 UTC
+Script was updated, flushing the cache for this script with option full.
+Script timestamp: 2024-10-09 18:34:37 UTC
+Result timestamp: 2024-10-08 23:33:31 UTC
+terra 1.7.78
+
+Attaching package: ‘terra’
+
+The following objects are masked from ‘package:magrittr’:
+
+    extract, inset
+
+Loading required package: sp
+Reading layer `vector_presence_path' from data source 
+  `/scripts/Pops_from_DispDist/input/vector_presence_path.GeoJSON' 
+  using driver `GeoJSON'
+Simple feature collection with 4985 features and 167 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: -77.27111 ymin: -3.91936 xmax: -67.70525 ymax: 11
+Geodetic CRS:  WGS 84
+[1] 1
+[1] 2
+`summarise()` has grouped output by 'hipotesis'. You can override using the
+`.groups` argument.
+[1] 1
+[1] 2
+Saving 7 x 7 in image
+Deleting source `/output/Pops_from_DispDist/Pops_from_DispDist/e2633d563aa0ab37a4a358858a81170b/folder_hypothesis_vector/hip1_dist105802.GeoJSON' failed
+Writing layer `hip1_dist105802' to data source 
+  `/output/Pops_from_DispDist/Pops_from_DispDist/e2633d563aa0ab37a4a358858a81170b/folder_hypothesis_vector/hip1_dist105802.GeoJSON' using driver `GeoJSON'
+Writing 7 features with 4 fields and geometry type Polygon.
+Deleting source `/output/Pops_from_DispDist/Pops_from_DispDist/e2633d563aa0ab37a4a358858a81170b/folder_hypothesis_vector/hip2_dist132801.GeoJSON' failed
+Writing layer `hip2_dist132801' to data source 
+  `/output/Pops_from_DispDist/Pops_from_DispDist/e2633d563aa0ab37a4a358858a81170b/folder_hypothesis_vector/hip2_dist132801.GeoJSON' using driver `GeoJSON'
+Writing 4 features with 4 fields and geometry type Polygon.
+Warning messages:
+1: In data.frame(..., check.names = FALSE) :
+  row names were found from a short variable and have been discarded
+2: In data.frame(..., check.names = FALSE) :
+  row names were found from a short variable and have been discarded
+3: In plot_theme(plot) :
+  The `base_size` theme element is not defined in the element hierarchy.
+4: In plot_theme(plot) :
+  The `base_size` theme element is not defined in the element hierarchy.
+           used  (Mb) gc trigger  (Mb) max used  (Mb)
+Ncells  3033838 162.1    5009554 267.6  5009554 267.6
+Vcells 10556417  80.6   37561685 286.6 46854284 357.5
+Runner: biab-runner-conda version 2024-10-02 13:29
+
+Elapsed: 13.942855357s

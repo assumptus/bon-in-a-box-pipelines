@@ -1,0 +1,20 @@
+2024-10-08 22:15:37 UTC
+Previous results not found: running for the first time.
+terra 1.7.78
+
+Attaching package: ‘terra’
+
+The following objects are masked from ‘package:magrittr’:
+
+    extract, inset
+
+Deleting source `/output/StudyArea_to_grid/StudyArea_to_grid/02fc019aefa3cfbc7534a48dc4474330/json_study_area_path.GeoJSON' failed
+Writing layer `json_study_area_path' to data source 
+  `/output/StudyArea_to_grid/StudyArea_to_grid/02fc019aefa3cfbc7534a48dc4474330/json_study_area_path.GeoJSON' using driver `GeoJSON'
+Writing 1 features with 0 fields and geometry type Polygon.
+          used  (Mb) gc trigger  (Mb) max used  (Mb)
+Ncells 2414712 129.0    3784711 202.2  3784711 202.2
+Vcells 3217044  24.6    8388608  64.0  5394828  41.2
+Runner: biab-runner-conda version 2024-10-02 13:29
+
+Elapsed: 4.305279908s

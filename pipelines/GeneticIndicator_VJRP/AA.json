@@ -1,0 +1,110 @@
+{
+  "nodes": [
+    {
+      "id": "16",
+      "type": "io",
+      "position": {
+        "x": 1100.1309386300816,
+        "y": 8.12555073849029
+      },
+      "data": {
+        "descriptionFile": "Pops_from_distance>Pops_from_distance.yml"
+      }
+    },
+    {
+      "id": "17",
+      "type": "output",
+      "position": {
+        "x": 1600.987838167659,
+        "y": 50.719932855958234
+      },
+      "data": {
+        "label": "Output"
+      }
+    },
+    {
+      "id": "24",
+      "type": "io",
+      "position": {
+        "x": 389.5333251953125,
+        "y": 279
+      },
+      "data": {
+        "descriptionFile": "Pops_from_DispDist2>Pops_from_DispDist.yml"
+      }
+    },
+    {
+      "id": "28",
+      "type": "io",
+      "position": {
+        "x": 620.5333251953125,
+        "y": 166
+      },
+      "data": {
+        "descriptionFile": "getPopCountry.json"
+      }
+    },
+    {
+      "id": "29",
+      "type": "output",
+      "position": {
+        "x": 1051.5333251953125,
+        "y": 169
+      },
+      "data": {
+        "label": "Output"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "16",
+      "sourceHandle": "plot_hypothesis",
+      "target": "17",
+      "targetHandle": null,
+      "id": "reactflow__edge-16plot_hypothesis-17"
+    },
+    {
+      "source": "28",
+      "sourceHandle": "GBIF_from_polygon>GBIF_from_polygon.yml@10|vector_presence",
+      "target": "29",
+      "targetHandle": null,
+      "id": "reactflow__edge-28GBIF_from_polygon>GBIF_from_polygon.yml@10|vector_presence-29"
+    }
+  ],
+  "inputs": {
+    "getPopCountry.json@28|GBIF_from_polygon>GBIF_from_polygon.yml@10|country": {
+      "description": "Optional string, country to retrieve the occurrences from. Leave blank to ignore administrative boundaries.",
+      "label": "country",
+      "weight": 0,
+      "type": "text",
+      "example": "Colombia"
+    },
+    "getPopCountry.json@28|GBIF_from_polygon>GBIF_from_polygon.yml@10|vector_polygon": {
+      "description": "Text string with the complete path location for the spatial file containing the study area boundaries. Accepted file types include shapefile (.shp), raster (.tif/GeoTIFF), GeoJSON (.json) or  GeoPackage (.gpkg).",
+      "label": "vector_polygon",
+      "weight": 1,
+      "type": "application/geo+json",
+      "example": [
+        "/scripts/GBIF_from_polygon/input/sp_map.GeoJSON"
+      ]
+    },
+    "getPopCountry.json@28|GBIF_from_polygon>GBIF_from_polygon.yml@10|species": {
+      "description": "Scientific name of the species",
+      "label": "species names",
+      "weight": 2,
+      "type": "text[]",
+      "example": [
+        "Myrmecophaga tridactyla"
+      ]
+    }
+  },
+  "outputs": {
+    "getPopCountry.json@28|GBIF_from_polygon>GBIF_from_polygon.yml@10|vector_presence": {
+      "description": "Text string with the complete path location for the spatial file to the study area's raster image (TIFF format) with the chosen projected coordinate system. Use this file for spatial operations and when biological data coordinates are projected to a particular coordinate system.",
+      "label": "vector_presence",
+      "weight": 0,
+      "type": "application/geo+json"
+    }
+  }
+}
