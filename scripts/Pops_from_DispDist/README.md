@@ -13,7 +13,8 @@ output:
 
 Population Polygons Using Dispersal Thresholds from Distance Maps
 ================
-This `box script` estimates discrete population polygons using dispersal
+
+This `box` estimates discrete population polygons using dispersal
 thresholds based on distance maps generated from species occurrence
 points within a predefined grid map, such as a study area or species
 distribution model. It calculates a distance map from the occurrence
@@ -40,12 +41,11 @@ threshold hypotheses derived from distance maps.
   - [Estimate Distance Density Map](#estimate-distance-density-map)
   - [Estimate Distance tresholds](#estimate-distance-tresholds)
   - [Estimate discrete populations
-    hypotesis](#estimate-discrete-populations-hypotesis)
+    hypothesis](#estimate-discrete-populations-hypothesis)
   - [Summary table](#summary-table)
   - [Plot discrete populations
-    hypotesis](#plot-discrete-populations-hypotesis)
+    hypothesis](#plot-discrete-populations-hypothesis)
 - [Export results](#export-results)
-
 
 ## inputs
 
@@ -208,7 +208,7 @@ print(data_hypothesis)
 | 90%  |          9 |     276875 |
 | 100% |         10 |     507923 |
 
-### Estimate discrete populations hypotesis
+### Estimate discrete populations hypothesis
 
 For each dispersal threshold `data_hypothesis`, the script generates
 hypotheses about potential discrete population areas. A cutoff is
@@ -220,7 +220,7 @@ threshold is assigned an identifier, classifying it as part of a
 distinct population.
 
 ``` r
-### Estimate discrete populations hypotesis ####
+### Estimate discrete populations hypothesis ####
   list_hypothesis<- pbapply::pblapply(seq_along(list_thresholds), function(i){
   
   threshold <- list_thresholds[i]  #
@@ -276,7 +276,7 @@ print(table_hypothesis)
 |          9 |     276875 |    1 |
 |         10 |     507923 |    1 |
 
-### Plot discrete populations hypotesis
+### Plot discrete populations hypothesis
 
 Graphs `plot_results` are generated to illustrate how the discrete
 populations are distributed within the study area based on the different
@@ -295,7 +295,7 @@ coltab(list_hypothesis_tifcol[[i]]) <- data.frame(values= seq(discrete_vals), co
 }
 list_hypothesis_tifcol<- list_hypothesis_tifcol %>% setNames(names(list_hypothesis_tif))
 
-### Plot discrete populations hypotesis ####
+### Plot discrete populations hypothesis ####
 plot_results<- pbapply::pblapply(list_hypothesis_sf, function(x)
     { ggplot()+geom_sf(data= x, aes(fill= pop_name))+theme_void()+
     scale_fill_manual(values =  cols_vals) +

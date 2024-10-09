@@ -121,10 +121,10 @@ data_hypothesis<- read.csv(file.path(file.path(dirname(this.path::this.path()), 
 knitr::kable(data_hypothesis)
 ```
 
-### Estimate discrete populations hypotesis
+### Estimate discrete populations hypothesis
 For each dispersal threshold `data_hypothesis`, the script generates hypotheses about potential discrete population areas. A cutoff is created around all cells whose distance to the occurrence point is less than or equal to the threshold. These areas are converted into polygons, which are then grouped based on geographic proximity to identify potential discrete populations. Each polygon generated from the threshold is assigned an identifier, classifying it as part of a distinct population.
 ```{r,  eval=F, echo=T, results='hide', warning= F, message = F}
-### Estimate discrete populations hypotesis ####
+### Estimate discrete populations hypothesis ####
   list_hypothesis<- pbapply::pblapply(seq_along(list_thresholds), function(i){
   
   threshold <- list_thresholds[i]  #
@@ -168,7 +168,7 @@ table_hypothesis<- read.csv(file.path(file.path(dirname(this.path::this.path()),
 knitr::kable(table_hypothesis)
 ```
 
-### Plot discrete populations hypotesis
+### Plot discrete populations hypothesis
 Graphs `plot_results` are generated  to illustrate how the discrete populations are distributed within the study area based on the different distance thresholds. Each graph displays the polygons corresponding to the populations, distinguished by a color scale. The titles of the graphs indicate the distance threshold applied to each hypothesis.
 
 ```{r,  eval=F, echo=T, results='hide', warning= F, message = F}
@@ -182,7 +182,7 @@ coltab(list_hypothesis_tifcol[[i]]) <- data.frame(values= seq(discrete_vals), co
 }
 list_hypothesis_tifcol<- list_hypothesis_tifcol %>% setNames(names(list_hypothesis_tif))
 
-### Plot discrete populations hypotesis ####
+### Plot discrete populations hypothesis ####
 plot_results<- pbapply::pblapply(list_hypothesis_sf, function(x)
     { ggplot()+geom_sf(data= x, aes(fill= pop_name))+theme_void()+
     scale_fill_manual(values =  cols_vals) +
